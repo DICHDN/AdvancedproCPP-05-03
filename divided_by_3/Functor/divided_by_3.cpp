@@ -8,13 +8,28 @@
 
 	void divided_by_3:: get_sum()
 	{
-		std::cout << "Сумма делящихся на 3 без остатка чисел = " << summ << std::endl;
+		std::cout << "The sum of the numbers divisible by 3 without remainder = " << summ << std::endl;
 	};
 	void divided_by_3:: get_count()
 	{
-		std::cout << "Количество делящихся на 3 без остатка чисел = " << m_counter << std::endl;
+		std::cout << "The number of numbers divisible by 3 without remainder = " << m_counter << std::endl;
 	};
 
-
+	void divided_by_3:: operator()()
+	{
+		int count = 0;
+		int summ = 0;
+		for (auto a : arr)
+		{
+			if (a % 3 == 0)
+			{
+				if (a == 0) continue;
+				summ += a;
+				++count;
+			}
+		}
+		this->summ = summ;
+		this->m_counter = count;
+	}
 
 	
